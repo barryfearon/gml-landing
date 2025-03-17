@@ -35,12 +35,12 @@ const CompetitorComparison: React.FC = () => {
   ];
 
   return (
-    <div className="container mx-auto p-6 bg-cyber-softGray">
-      <h2 className="text-3xl font-semibold text-center mb-6 text-cyber-light">
+    <div className="container mx-auto p-6 bg-gml-softGray">
+      <h2 className="text-3xl font-semibold text-center mb-6 text-gml-light">
         Competitor Comparison
       </h2>
       <div className="overflow-x-auto">
-        <table className="min-w-full bg-white border border-gray-300 shadow-lg rounded-lg text-cyber-light">
+        <table className="min-w-full bg-white border border-gray-300 shadow-lg rounded-lg text-gml-light">
           <thead>
             <tr className="bg-gray-200">
               <th className="py-3 px-6 text-left">Service</th>

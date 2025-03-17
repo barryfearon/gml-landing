@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 import heroImg from "../public/gml-hero-banner-xwide-x1.png";
-import devTeam from "../public/developer-team-1369460255 copy.jpg";
-import webDev from "../public/webdev-services-1082352287 copy.jpg";
+import devTeam from "../public/developer-team-1369460255.jpg";
+import webDev from "../public/webdev-services-1082352287.jpg";
 import webDesign from "../public/webdesign-2334924885.jpg";
 import confCall from "../public/conference-call-1733849612.jpg";
 import redesign from "../public/redesign-2528186535.jpg";
@@ -28,7 +28,7 @@ export default function HomePage() {
   };
 
   return (
-    <main className="flex flex-col items-center justify-center w-full">
+    <main className="flex flex-col items-center justify-center w-full bg-gml-design">
       {/* ========== HERO SECTION ========== */}
       <motion.div
         initial="hidden"
@@ -48,7 +48,7 @@ export default function HomePage() {
           />
         </div>
       </motion.div>
-      <section className="relative w-full bg-gray-100 py-12 px-6">
+      <section className="relative w-full bg-gml-softGray py-12 px-6">
         <motion.div
           className="max-w-5xl mx-auto text-center"
           initial="hidden"
@@ -56,7 +56,7 @@ export default function HomePage() {
           viewport={{ once: true }}
           variants={fadeInUp}
         >
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 text-cyber-dark">
+          <h1 className="text-3xl md:text-5xl font-bold mb-4 text-gml-design">
             Empower Your Business with Professional Website Development
           </h1>
           <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
@@ -76,7 +76,7 @@ export default function HomePage() {
           variants={fadeInUp}
         >
           <button
-            className="px-6 py-3 bg-cyber-neonOrange text-white font-semibold rounded hover:bg-cyber-neonOrangeDark transition"
+            className="px-6 py-3 bg-gml-neonOrange text-white font-semibold rounded hover:bg-gml-neonOrangeDark transition"
             aria-label="CTA: Hero - Let's Grow Together"
           >
             Let’s Grow Together
@@ -86,7 +86,7 @@ export default function HomePage() {
 
       {/* ========== SECTION 1: Why You Need a Professional Website Dev in the UK ========== */}
       <motion.section
-        className="max-w-5xl mx-auto py-12 px-6"
+        className="max-w-5xl mx-auto py-12 px-6 bg-gml-design"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -118,7 +118,7 @@ export default function HomePage() {
         {/* CTA 1 (Unique) */}
         <div className="text-center mt-6">
           <button
-            className="px-6 py-3 bg-cyber-neonOrange text-white font-semibold rounded hover:bg-cyber-neonOrangeDark transition"
+            className="px-6 py-3 bg-gml-neonOrange text-white font-semibold rounded hover:bg-gml-neonOrangeDark transition"
             aria-label="CTA: Discuss Your Project"
           >
             Discuss Your Project
@@ -128,14 +128,14 @@ export default function HomePage() {
 
       {/* ========== SECTION 2: Comprehensive Web Dev Services ========== */}
       <motion.section
-        className="bg-gray-50 w-full py-12 px-6"
+        className="bg-gml-softGray w-full py-12 px-6"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={fadeInUp}
       >
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-cyber-dark">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gml-design">
             Comprehensive Web Development Services UK Businesses Trust
           </h2>
           <p className="text-gray-700 mb-4">
@@ -173,7 +173,7 @@ export default function HomePage() {
         {/* CTA 2 (Unique) */}
         <div className="text-center mt-6">
           <button
-            className="px-6 py-3 bg-cyber-neonOrange text-white font-semibold rounded hover:bg-cyber-neonOrangeDark transition"
+            className="px-6 py-3 bg-gml-neonOrange text-white font-semibold rounded hover:bg-gml-neonOrangeDark transition"
             aria-label="CTA: Start Building Now"
           >
             Start Building Now
@@ -214,7 +214,7 @@ export default function HomePage() {
         {/* CTA 3 (Unique) */}
         <div className="text-center mt-6">
           <button
-            className="px-6 py-3 bg-cyber-neonOrange text-white font-semibold rounded hover:bg-cyber-neonOrangeDark transition"
+            className="px-6 py-3 bg-gml-neonOrange text-white font-semibold rounded hover:bg-gml-neonOrangeDark transition"
             aria-label="CTA: Contact Our Isle of Man Team"
           >
             Contact Our Isle of Man Team
@@ -224,14 +224,14 @@ export default function HomePage() {
 
       {/* ========== SECTION 4: Searching for a Web Agency Near Me? ========== */}
       <motion.section
-        className="bg-gray-50 w-full py-12 px-6"
+        className="bg-gml-softGray w-full py-12 px-6"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={fadeInUp}
       >
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-cyber-dark">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gml-design">
             Searching for a Web Agency Near Me? Here’s Why Location Matters Less
           </h2>
           <p className="text-gray-700 mb-4">
@@ -257,7 +257,7 @@ export default function HomePage() {
         {/* CTA 4 (Unique) */}
         <div className="text-center mt-6">
           <button
-            className="px-6 py-3 bg-cyber-neonOrange text-white font-semibold rounded hover:bg-cyber-neonOrangeDark transition"
+            className="px-6 py-3 bg-gml-neonOrange text-white font-semibold rounded hover:bg-gml-neonOrangeDark transition"
             aria-label="CTA: Schedule a Virtual Meeting"
           >
             Schedule a Virtual Meeting
@@ -296,7 +296,7 @@ export default function HomePage() {
         {/* CTA 5 (Unique) */}
         <div className="text-center mt-6">
           <button
-            className="px-6 py-3 bg-cyber-neonOrange text-white font-semibold rounded hover:bg-cyber-neonOrangeDark transition"
+            className="px-6 py-3 bg-gml-neonOrange text-white font-semibold rounded hover:bg-gml-neonOrangeDark transition"
             aria-label="CTA: Revamp Your Website"
           >
             Revamp Your Website
@@ -306,14 +306,14 @@ export default function HomePage() {
 
       {/* ========== SECTION 6: Ecommerce Web Development UK ========== */}
       <motion.section
-        className="bg-gray-50 w-full py-12 px-6"
+        className="bg-gml-softGray w-full py-12 px-6"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={fadeInUp}
       >
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-cyber-dark">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gml-design">
             Ecommerce Web Development UK: Expand Your Market
           </h2>
           <p className="text-gray-700 mb-4">
@@ -337,7 +337,7 @@ export default function HomePage() {
         {/* CTA 6 (Unique) */}
         <div className="text-center mt-6">
           <button
-            className="px-6 py-3 bg-cyber-neonOrange text-white font-semibold rounded hover:bg-cyber-neonOrangeDark transition"
+            className="px-6 py-3 bg-gml-neonOrange text-white font-semibold rounded hover:bg-gml-neonOrangeDark transition"
             aria-label="CTA: Launch Your Online Store"
           >
             Launch Your Online Store
@@ -377,7 +377,7 @@ export default function HomePage() {
         {/* CTA 7 (Unique) */}
         <div className="text-center mt-6">
           <button
-            className="px-6 py-3 bg-cyber-neonOrange text-white font-semibold rounded hover:bg-cyber-neonOrangeDark transition"
+            className="px-6 py-3 bg-gml-neonOrange text-white font-semibold rounded hover:bg-gml-neonOrangeDark transition"
             aria-label="CTA: Kickstart Your Small Business Website"
           >
             Kickstart Your Small Business Website
@@ -387,14 +387,14 @@ export default function HomePage() {
 
       {/* ========== SECTION 8: Custom Web Development Solutions ========== */}
       <motion.section
-        className="bg-gray-50 w-full py-12 px-6"
+        className="bg-gml-softGray w-full py-12 px-6"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={fadeInUp}
       >
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-cyber-dark">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gml-design">
             Custom Web Development Solutions Tailored to You
           </h2>
           <p className="text-gray-700 mb-4">
@@ -419,7 +419,7 @@ export default function HomePage() {
         {/* CTA 8 (Unique) */}
         <div className="text-center mt-6">
           <button
-            className="px-6 py-3 bg-cyber-neonOrange text-white font-semibold rounded hover:bg-cyber-neonOrangeDark transition"
+            className="px-6 py-3 bg-gml-neonOrange text-white font-semibold rounded hover:bg-gml-neonOrangeDark transition"
             aria-label="CTA: Get a Custom Quote"
           >
             Get a Custom Quote
@@ -458,7 +458,7 @@ export default function HomePage() {
         {/* CTA 9 (Unique) */}
         <div className="text-center mt-6">
           <button
-            className="px-6 py-3 bg-cyber-neonOrange text-white font-semibold rounded hover:bg-cyber-neonOrangeDark transition"
+            className="px-6 py-3 bg-gml-neonOrange text-white font-semibold rounded hover:bg-gml-neonOrangeDark transition"
             aria-label="CTA: Accelerate Your Startup"
           >
             Accelerate Your Startup
@@ -468,14 +468,14 @@ export default function HomePage() {
 
       {/* ========== SECTION 10: Responsive Website Development Agency ========== */}
       <motion.section
-        className="bg-gray-50 w-full py-12 px-6"
+        className="bg-gml-softGray w-full py-12 px-6"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={fadeInUp}
       >
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-cyber-dark">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gml-design">
             Responsive Website Development Agency: Why Responsiveness Matters
           </h2>
           <p className="text-gray-700 mb-4">
@@ -499,7 +499,7 @@ export default function HomePage() {
         {/* CTA 10 (Unique) */}
         <div className="text-center mt-6">
           <button
-            className="px-6 py-3 bg-cyber-neonOrange text-white font-semibold rounded hover:bg-cyber-neonOrangeDark transition"
+            className="px-6 py-3 bg-gml-neonOrange text-white font-semibold rounded hover:bg-gml-neonOrangeDark transition"
             aria-label="CTA: Optimize for Every Device"
           >
             Optimize for Every Device
@@ -544,7 +544,7 @@ export default function HomePage() {
         {/* FINAL CTA (Unique) */}
         <div className="text-center mt-6">
           <button
-            className="mt-6 px-6 py-3 bg-cyber-neonOrange text-white font-semibold rounded hover:bg-cyber-neonOrangeDark transition"
+            className="mt-6 px-6 py-3 bg-gml-neonOrange text-white font-semibold rounded hover:bg-gml-neonOrangeDark transition"
             aria-label="CTA: Elevate Your Online Presence"
           >
             Elevate Your Online Presence

@@ -36,7 +36,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="w-full bg-gray-900 text-gray-200 px-6 py-12">
+    <footer className="w-full bg-gray-900 text-gray-200 px-6 py-12" id="footer">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* ========== 1. Company Branding  ========== */}
         <div>
@@ -185,7 +185,7 @@ const Footer = () => {
             />
             <button
               type="submit"
-              className="bg-cyber-neonOrange hover:bg-cyber-neonOrangeDark text-white font-semibold py-2 px-4 rounded transition-colors"
+              className="bg-gml-neonOrange hover:bg-gml-neonOrangeDark text-white font-semibold py-2 px-4 rounded transition-colors"
             >
               Send Message
             </button>

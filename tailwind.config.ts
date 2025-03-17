@@ -10,7 +10,7 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        cyber: {
+        gml: {
           DEFAULT: "#1E1B4B", // Deep Indigo (Primary Background)
           light: "#3B3486", // Lighter Indigo for UI elements
           dark: "#0C0A2F", // Almost black for deep contrast
@@ -18,7 +18,8 @@ export default {
           neonPurple: "#A020F0", // Vibrant Purple Glow
           neonOrange: "#FF6B00", // Neon Orange Accents
           neonOrangeDark: "#c05202",
-          softGray: "#B3B3B3", // Muted Gray for text
+          softGray: "#c4c4c4", // Muted Gray for text
+          design: "#2f4553",
         },
       },
     },
