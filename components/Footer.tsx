@@ -57,12 +57,7 @@ const Footer = () => {
           <h2 className="text-xl font-semibold mb-4">Quick Links</h2>
           <nav className="flex flex-col space-y-2">
             {/* Replace the href anchors (#...) with real routes or anchors in your landing page */}
-            <Link
-              href="#hero-section"
-              className="hover:text-white transition-colors"
-            >
-              Hero Section
-            </Link>
+
             <Link
               href="#why-professional"
               className="hover:text-white transition-colors"
@@ -124,10 +119,10 @@ const Footer = () => {
               Responsive Dev Agency
             </Link>
             <Link
-              href="#final-cta"
+              href="#elevate-your-online-presence"
               className="hover:text-white transition-colors"
             >
-              Final CTA
+              Elevate Your Online Presence
             </Link>
           </nav>
         </div>

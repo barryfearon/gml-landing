@@ -1,5 +1,5 @@
 "use client";
-
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -17,7 +17,32 @@ import responsiveWeb from "../public/responsive-design-concept-193510469.jpg";
 import elevateImg from "../public/elevate-1625681305.jpg";
 
 export default function HomePage() {
-  // Common animation variants for fade-in from below
+  // State for toggling modal visibility
+  const [showModal, setShowModal] = useState(false);
+
+  // States for form data
+  const [name, setName] = useState(() => "");
+  const [email, setEmail] = useState(() => "");
+  const [message, setMessage] = useState(() => "");
+
+  // Simple form submission handler
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // In a real project, you’d likely send this data to an API route,
+    // or use a third-party service (e.g., Mailchimp, SendGrid, etc.).
+    console.log("Form submitted:", { name, email, message });
+
+    // Reset form fields
+    setName("");
+    setEmail("");
+    setMessage("");
+
+    // Close the modal
+    setShowModal(false);
+  };
+
+  // Common animation variants for fade-in
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -48,6 +73,7 @@ export default function HomePage() {
           />
         </div>
       </motion.div>
+
       <section className="relative w-full bg-gml-softGray py-12 px-6">
         <motion.div
           className="max-w-5xl mx-auto text-center"
@@ -67,7 +93,7 @@ export default function HomePage() {
           </p>
         </motion.div>
 
-        {/* HERO CTA (Unique) */}
+        {/* HERO CTA (opens modal) */}
         <motion.div
           className="max-w-5xl mx-auto mt-8 flex justify-center"
           initial="hidden"
@@ -78,13 +104,14 @@ export default function HomePage() {
           <button
             className="px-6 py-3 bg-gml-neonOrange text-white font-semibold rounded hover:bg-gml-neonOrangeDark transition"
             aria-label="CTA: Hero - Let's Grow Together"
+            onClick={() => setShowModal(true)}
           >
             Let’s Grow Together
           </button>
         </motion.div>
       </section>
 
-      {/* ========== SECTION 1: Why You Need a Professional Website Dev in the UK ========== */}
+      {/* ========== SECTION 1 ========== */}
       <motion.section
         className="max-w-5xl mx-auto py-12 px-6 bg-gml-design"
         initial="hidden"
@@ -92,7 +119,10 @@ export default function HomePage() {
         viewport={{ once: true }}
         variants={fadeInUp}
       >
-        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-100">
+        <h2
+          className="text-2xl md:text-3xl font-bold mb-4 text-gray-100"
+          id={`why-professional`}
+        >
           Why You Need a Professional Website Development Company in the UK
         </h2>
         <p className="text-gray-100 mb-4">
@@ -115,18 +145,19 @@ export default function HomePage() {
           />
         </div>
 
-        {/* CTA 1 (Unique) */}
+        {/* CTA 1 (opens modal) */}
         <div className="text-center mt-6">
           <button
             className="px-6 py-3 bg-gml-neonOrange text-white font-semibold rounded hover:bg-gml-neonOrangeDark transition"
             aria-label="CTA: Discuss Your Project"
+            onClick={() => setShowModal(true)}
           >
             Discuss Your Project
           </button>
         </div>
       </motion.section>
 
-      {/* ========== SECTION 2: Comprehensive Web Dev Services ========== */}
+      {/* ========== SECTION 2 ========== */}
       <motion.section
         className="bg-gml-softGray w-full py-12 px-6"
         initial="hidden"
@@ -135,7 +166,10 @@ export default function HomePage() {
         variants={fadeInUp}
       >
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gml-design">
+          <h2
+            id={`comprehensive-services`}
+            className="text-2xl md:text-3xl font-bold mb-4 text-gml-design"
+          >
             Comprehensive Web Development Services UK Businesses Trust
           </h2>
           <p className="text-gray-700 mb-4">
@@ -170,18 +204,19 @@ export default function HomePage() {
           />
         </motion.div>
 
-        {/* CTA 2 (Unique) */}
+        {/* CTA 2 (opens modal) */}
         <div className="text-center mt-6">
           <button
             className="px-6 py-3 bg-gml-neonOrange text-white font-semibold rounded hover:bg-gml-neonOrangeDark transition"
             aria-label="CTA: Start Building Now"
+            onClick={() => setShowModal(true)}
           >
             Start Building Now
           </button>
         </div>
       </motion.section>
 
-      {/* ========== SECTION 3: Advantages of a Website Design Company in the Isle of Man ========== */}
+      {/* ========== SECTION 3 ========== */}
       <motion.section
         className="max-w-5xl mx-auto py-12 px-6"
         initial="hidden"
@@ -189,7 +224,10 @@ export default function HomePage() {
         viewport={{ once: true }}
         variants={fadeInUp}
       >
-        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-100">
+        <h2
+          id={`isle-of-man-advantages`}
+          className="text-2xl md:text-3xl font-bold mb-4 text-gray-100"
+        >
           The Advantages of a Website Design Company in the Isle of Man
         </h2>
         <p className="text-gray-100 mb-4">
@@ -211,18 +249,19 @@ export default function HomePage() {
           />
         </div>
 
-        {/* CTA 3 (Unique) */}
+        {/* CTA 3 (opens modal) */}
         <div className="text-center mt-6">
           <button
             className="px-6 py-3 bg-gml-neonOrange text-white font-semibold rounded hover:bg-gml-neonOrangeDark transition"
             aria-label="CTA: Contact Our Isle of Man Team"
+            onClick={() => setShowModal(true)}
           >
             Contact Our Isle of Man Team
           </button>
         </div>
       </motion.section>
 
-      {/* ========== SECTION 4: Searching for a Web Agency Near Me? ========== */}
+      {/* ========== SECTION 4 ========== */}
       <motion.section
         className="bg-gml-softGray w-full py-12 px-6"
         initial="hidden"
@@ -231,7 +270,10 @@ export default function HomePage() {
         variants={fadeInUp}
       >
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gml-design">
+          <h2
+            id={`web-agency-near-me`}
+            className="text-2xl md:text-3xl font-bold mb-4 text-gml-design"
+          >
             Searching for a Web Agency Near Me? Here’s Why Location Matters Less
           </h2>
           <p className="text-gray-700 mb-4">
@@ -254,18 +296,19 @@ export default function HomePage() {
           />
         </div>
 
-        {/* CTA 4 (Unique) */}
+        {/* CTA 4 (opens modal) */}
         <div className="text-center mt-6">
           <button
             className="px-6 py-3 bg-gml-neonOrange text-white font-semibold rounded hover:bg-gml-neonOrangeDark transition"
             aria-label="CTA: Schedule a Virtual Meeting"
+            onClick={() => setShowModal(true)}
           >
             Schedule a Virtual Meeting
           </button>
         </div>
       </motion.section>
 
-      {/* ========== SECTION 5: Website Redesign Services UK ========== */}
+      {/* ========== SECTION 5 ========== */}
       <motion.section
         className="max-w-5xl mx-auto py-12 px-6"
         initial="hidden"
@@ -273,7 +316,10 @@ export default function HomePage() {
         viewport={{ once: true }}
         variants={fadeInUp}
       >
-        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-100">
+        <h2
+          id={`website-redesign`}
+          className="text-2xl md:text-3xl font-bold mb-4 text-gray-100"
+        >
           Website Redesign Services UK: Revitalize Your Online Presence
         </h2>
         <p className="text-gray-100 mb-4">
@@ -293,18 +339,19 @@ export default function HomePage() {
           />
         </div>
 
-        {/* CTA 5 (Unique) */}
+        {/* CTA 5 (opens modal) */}
         <div className="text-center mt-6">
           <button
             className="px-6 py-3 bg-gml-neonOrange text-white font-semibold rounded hover:bg-gml-neonOrangeDark transition"
             aria-label="CTA: Revamp Your Website"
+            onClick={() => setShowModal(true)}
           >
             Revamp Your Website
           </button>
         </div>
       </motion.section>
 
-      {/* ========== SECTION 6: Ecommerce Web Development UK ========== */}
+      {/* ========== SECTION 6 ========== */}
       <motion.section
         className="bg-gml-softGray w-full py-12 px-6"
         initial="hidden"
@@ -313,7 +360,10 @@ export default function HomePage() {
         variants={fadeInUp}
       >
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gml-design">
+          <h2
+            id={`ecommerce-dev`}
+            className="text-2xl md:text-3xl font-bold mb-4 text-gml-design"
+          >
             Ecommerce Web Development UK: Expand Your Market
           </h2>
           <p className="text-gray-700 mb-4">
@@ -334,18 +384,19 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* CTA 6 (Unique) */}
+        {/* CTA 6 (opens modal) */}
         <div className="text-center mt-6">
           <button
             className="px-6 py-3 bg-gml-neonOrange text-white font-semibold rounded hover:bg-gml-neonOrangeDark transition"
             aria-label="CTA: Launch Your Online Store"
+            onClick={() => setShowModal(true)}
           >
             Launch Your Online Store
           </button>
         </div>
       </motion.section>
 
-      {/* ========== SECTION 7: Best Website Developers for Small Business ========== */}
+      {/* ========== SECTION 7 ========== */}
       <motion.section
         className="max-w-5xl mx-auto py-12 px-6"
         initial="hidden"
@@ -353,7 +404,10 @@ export default function HomePage() {
         viewport={{ once: true }}
         variants={fadeInUp}
       >
-        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-100">
+        <h2
+          id={`small-business-dev`}
+          className="text-2xl md:text-3xl font-bold mb-4 text-gray-100"
+        >
           Best Website Developers for Small Business: Our Approach
         </h2>
         <p className="text-gray-100 mb-4">
@@ -374,18 +428,19 @@ export default function HomePage() {
           />
         </div>
 
-        {/* CTA 7 (Unique) */}
+        {/* CTA 7 (opens modal) */}
         <div className="text-center mt-6">
           <button
             className="px-6 py-3 bg-gml-neonOrange text-white font-semibold rounded hover:bg-gml-neonOrangeDark transition"
             aria-label="CTA: Kickstart Your Small Business Website"
+            onClick={() => setShowModal(true)}
           >
             Kickstart Your Small Business Website
           </button>
         </div>
       </motion.section>
 
-      {/* ========== SECTION 8: Custom Web Development Solutions ========== */}
+      {/* ========== SECTION 8 ========== */}
       <motion.section
         className="bg-gml-softGray w-full py-12 px-6"
         initial="hidden"
@@ -394,7 +449,10 @@ export default function HomePage() {
         variants={fadeInUp}
       >
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gml-design">
+          <h2
+            id={`custom-web-dev`}
+            className="text-2xl md:text-3xl font-bold mb-4 text-gml-design"
+          >
             Custom Web Development Solutions Tailored to You
           </h2>
           <p className="text-gray-700 mb-4">
@@ -416,18 +474,19 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* CTA 8 (Unique) */}
+        {/* CTA 8 (opens modal) */}
         <div className="text-center mt-6">
           <button
             className="px-6 py-3 bg-gml-neonOrange text-white font-semibold rounded hover:bg-gml-neonOrangeDark transition"
             aria-label="CTA: Get a Custom Quote"
+            onClick={() => setShowModal(true)}
           >
             Get a Custom Quote
           </button>
         </div>
       </motion.section>
 
-      {/* ========== SECTION 9: Affordable Web Design for Startups & Entrepreneurs ========== */}
+      {/* ========== SECTION 9 ========== */}
       <motion.section
         className="max-w-5xl mx-auto py-12 px-6"
         initial="hidden"
@@ -435,7 +494,10 @@ export default function HomePage() {
         viewport={{ once: true }}
         variants={fadeInUp}
       >
-        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-100">
+        <h2
+          id={`affordable-startups`}
+          className="text-2xl md:text-3xl font-bold mb-4 text-gray-100"
+        >
           Affordable Web Design for Startups &amp; Entrepreneurs
         </h2>
         <p className="text-gray-100 mb-4">
@@ -455,18 +517,19 @@ export default function HomePage() {
           />
         </div>
 
-        {/* CTA 9 (Unique) */}
+        {/* CTA 9 (opens modal) */}
         <div className="text-center mt-6">
           <button
             className="px-6 py-3 bg-gml-neonOrange text-white font-semibold rounded hover:bg-gml-neonOrangeDark transition"
             aria-label="CTA: Accelerate Your Startup"
+            onClick={() => setShowModal(true)}
           >
             Accelerate Your Startup
           </button>
         </div>
       </motion.section>
 
-      {/* ========== SECTION 10: Responsive Website Development Agency ========== */}
+      {/* ========== SECTION 10 ========== */}
       <motion.section
         className="bg-gml-softGray w-full py-12 px-6"
         initial="hidden"
@@ -475,7 +538,10 @@ export default function HomePage() {
         variants={fadeInUp}
       >
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gml-design">
+          <h2
+            id={`responsive-dev`}
+            className="text-2xl md:text-3xl font-bold mb-4 text-gml-design"
+          >
             Responsive Website Development Agency: Why Responsiveness Matters
           </h2>
           <p className="text-gray-700 mb-4">
@@ -496,11 +562,12 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* CTA 10 (Unique) */}
+        {/* CTA 10 (opens modal) */}
         <div className="text-center mt-6">
           <button
             className="px-6 py-3 bg-gml-neonOrange text-white font-semibold rounded hover:bg-gml-neonOrangeDark transition"
             aria-label="CTA: Optimize for Every Device"
+            onClick={() => setShowModal(true)}
           >
             Optimize for Every Device
           </button>
@@ -515,7 +582,10 @@ export default function HomePage() {
         viewport={{ once: true }}
         variants={fadeInUp}
       >
-        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-100">
+        <h2
+          id={`elevate-your-online-presence`}
+          className="text-2xl md:text-3xl font-bold mb-4 text-gray-100"
+        >
           Ready to Elevate Your Online Presence?
         </h2>
         <p className="text-gray-100 mb-4">
@@ -541,16 +611,93 @@ export default function HomePage() {
           />
         </div>
 
-        {/* FINAL CTA (Unique) */}
+        {/* FINAL CTA (opens modal) */}
         <div className="text-center mt-6">
           <button
             className="mt-6 px-6 py-3 bg-gml-neonOrange text-white font-semibold rounded hover:bg-gml-neonOrangeDark transition"
             aria-label="CTA: Elevate Your Online Presence"
+            onClick={() => setShowModal(true)}
           >
             Elevate Your Online Presence
           </button>
         </div>
       </motion.section>
+
+      {/* ========== MODAL ========== */}
+      {showModal && (
+        <div className="fixed z-10 inset-0 overflow-y-auto">
+          <div className="flex items-center justify-center min-h-screen">
+            {/* Dark semi-transparent background */}
+            <div
+              className="absolute inset-0 bg-black bg-opacity-50"
+              onClick={() => setShowModal(false)}
+            />
+
+            {/* Modal content */}
+            <div className="relative bg-white p-6 rounded shadow-lg z-20 w-full max-w-md mx-auto">
+              <h2 className="text-2xl font-bold mb-4 text-gray-700">
+                Contact Us
+              </h2>
+              <form onSubmit={handleSubmit}>
+                <div className="mb-4">
+                  <label className="block text-gray-700 font-semibold mb-2">
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none text-gray-700"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                  />
+                </div>
+
+                <div className="mb-4">
+                  <label className="block text-gray-700 font-semibold mb-2">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none text-gray-700"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                </div>
+
+                <div className="mb-4">
+                  <label className="block text-gray-700 font-semibold mb-2">
+                    Message
+                  </label>
+                  <textarea
+                    className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none text-gray-700"
+                    rows={4}
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    required
+                  />
+                </div>
+
+                <div className="flex items-center justify-end">
+                  <button
+                    type="button"
+                    className="mr-4 text-gray-500 hover:text-gray-700"
+                    onClick={() => setShowModal(false)}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    className="px-6 py-2 bg-gml-neonOrange text-white font-semibold rounded hover:bg-gml-neonOrangeDark transition"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
