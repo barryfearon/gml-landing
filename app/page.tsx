@@ -6,15 +6,15 @@ import Image from "next/image";
 import heroImg from "../public/gml-hero-banner-xwide-x1.png";
 import devTeam from "../public/developer-team-1369460255.jpg";
 import webDev from "../public/webdev-services-1082352287.jpg";
-import webDesign from "../public/webdesign-2334924885.jpg";
+import businessComm from "../public/communication-and-connection-business-and-2495143773.jpg";
 import confCall from "../public/conference-call-1733849612.jpg";
-import redesign from "../public/redesign-2528186535.jpg";
+import redesign from "../public/sketch-drawing-template-layout-1082901185.jpg";
 import eCommerce from "../public/ecommerce-2470294377.jpg";
 import smallBiz from "../public/small-business-2475094055.jpg";
 import customWeb from "../public/custom-web-dev-15797485.jpg";
 import affordableWeb from "../public/affordable-163185698.jpg";
 import responsiveWeb from "../public/responsive-design-concept-193510469.jpg";
-import elevateImg from "../public/elevate-1625681305.jpg";
+import elevateImg from "../public/ascending-arrow-linear-sign-2256742839.jpg";
 
 export default function HomePage() {
   // State for toggling modal visibility
@@ -241,7 +241,7 @@ export default function HomePage() {
         </p>
         <div className="flex justify-center my-6">
           <Image
-            src={webDesign}
+            src={businessComm}
             alt="Isle of Man Web Design"
             width={800}
             height={400}
