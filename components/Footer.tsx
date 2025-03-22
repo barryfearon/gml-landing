@@ -1,7 +1,10 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
+
+import logo from "../public/footer-logo.svg";
 
 /**
  * A "Fat Footer" component for Next.js (TypeScript) + Tailwind CSS
@@ -39,14 +42,15 @@ const Footer = () => {
     <footer className="w-full bg-gray-900 text-gray-200 px-6 py-12" id="footer">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* ========== 1. Company Branding  ========== */}
-        <div>
-          <h2 className="text-xl font-semibold mb-4">Your Brand</h2>
+        <div className="md:col-span-2">
+          <Image src={logo} width={200} height={71} alt="Company Logo" />
           <p className="text-sm text-gray-400">
-            (Placeholder text)
             <br />
-            1234 Example Street
+            14 Ballakermeen Drive
             <br />
-            Isle of Man, IM1
+            Douglas IM1 4HN
+            <br />
+            Isle of Man
             <br />
             United Kingdom
           </p>
@@ -128,10 +132,11 @@ const Footer = () => {
         </div>
 
         {/* ========== 3. Placeholder Partner Logos ========== */}
+        {/*         
         <div>
           <h2 className="text-xl font-semibold mb-4">Our Partners</h2>
           <div className="grid grid-cols-2 gap-4">
-            {/* Replace with actual logos or sponsor images */}
+            
             <div className="bg-gray-800 w-full h-12 flex items-center justify-center rounded">
               <span className="text-gray-400 text-sm">Logo 1</span>
             </div>
@@ -145,7 +150,7 @@ const Footer = () => {
               <span className="text-gray-400 text-sm">Logo 4</span>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* ========== 4. Contact Form ========== */}
         <div>
@@ -190,7 +195,8 @@ const Footer = () => {
 
       {/* Bottom Footer Bar / Copyright */}
       <div className="mt-8 border-t border-gray-700 pt-4 text-center text-sm text-gray-500">
-        &copy; {new Date().getFullYear()} Your Company. All rights reserved.
+        &copy; {new Date().getFullYear()} Gaming Mechanics Limited. All rights
+        reserved.
       </div>
     </footer>
   );
